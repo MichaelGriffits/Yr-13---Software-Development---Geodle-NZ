@@ -20,7 +20,7 @@
     .banneritem {
       text-align: center;
       padding: 0px; 
-      font-size: 80pt;
+      font-size: 6.2rem;
       font-family: Lexend;
       font-weight: 400;
       color: #46bbe5;
@@ -93,7 +93,7 @@
       }
 
     .popupContent{
-        width:25%;
+        width:24rem;
         height:70%;
         margin:0 auto;     
         margin-top: 5%;
@@ -120,12 +120,30 @@
         cursor: pointer;
         font-size: 12pt;
         margin-top: 10px;
-        margin-left: 165px;
+        margin-left: 30px;
         line-height: 24px;
         display: flex;
         vertical-align: top;
       }
       
+      .checkbox {
+        cursor: pointer;
+        font-size: 12pt;
+        margin-top: 10px;
+        margin-left: 30px;
+        line-height: 24px;
+        display: flex;
+        vertical-align: top;
+      }
+
+      #checkboxText{
+        font-size: 12pt;
+        margin-left: 5px;
+        line-height: 24px;
+        display: flex;
+        vertical-align: top;
+      }
+
       .Cancel{
         color:#798c93;
         background-color:  #ffffff00;
