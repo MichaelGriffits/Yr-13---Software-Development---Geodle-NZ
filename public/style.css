@@ -159,7 +159,7 @@
         background-color: #74ceef;
         border: solid;
         border-width: 0.3rem;
-        border-radius: 20pt;
+        border-radius: 30pt;
         border-color: #637579;
         width: 47rem;
         height: 32rem;
@@ -167,3 +167,18 @@
         margin-left: 36rem;
       }
       
+      .gameText{
+        font-family: Lexend;
+        font-size: 26pt;
+        float: left;
+        margin-top: -9.5rem;
+        margin-left: 50rem;
+      }
+
+      .initialRegion{
+        color: #9cc5A1;
+      }
+
+      .finalRegion{
+        color: #f07d7d;
+      }
