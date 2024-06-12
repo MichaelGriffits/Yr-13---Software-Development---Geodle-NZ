@@ -94,7 +94,7 @@
 
     .popupContent{
         width:24rem;
-        height:70%;
+        height:35rem;
         margin:0 auto;     
         margin-top: 5%;
         background-color: rgb(255, 255, 255);
@@ -105,7 +105,8 @@
         font-family: Lexend;
         font-size: 25pt;
         font-weight: 400;
-        text-align: center;
+        float:right;
+        margin-right: 7.5rem;
       }
 
       .SettingOptions{
@@ -148,11 +149,21 @@
         color:#798c93;
         background-color:  #ffffff00;
         border: none;
-        position: absolute;
-        top: 10.6%;
-        right: 60.7%;
+        margin-top: 0.5rem;
+        margin-left: 0.5rem;
         transform: scale(1.5);
         cursor: pointer;
       }
 
+      .gameBackground{
+        background-color: #74ceef;
+        border: solid;
+        border-width: 0.3rem;
+        border-radius: 20pt;
+        border-color: #637579;
+        width: 47rem;
+        height: 32rem;
+        margin-top: -5rem;
+        margin-left: 36rem;
+      }
       

@@ -47,63 +47,69 @@
         <div class="line"></div>  
 
     </div>
-      <div class="main-content">
-        <div id= "settingsMenu" class="popup" style="display:none;">
-            <div class="overlay">
-                <div class="popupContent">
-                    <div class="Title">Settings</div>
-                    <div id="ColourScheme" class="SettingOptions">
-                        Colour Scheme:
-                        <div class="radio" >
-                           
-                            <input type="radio" name="radio" id="DarkMode" onclick="darkMode()"> 
-                            <span class="material-symbols-outlined">
-                                Dark_Mode
-                            </span>
-                            Dark Mode
-                        </div>
-                        <div class="radio">
-                            
-                            <input type="radio" name="radio" id="LightMode" onclick="lightMode()">
-                            <span class="material-symbols-outlined">
-                                Light_Mode
-                            </span>
-                            Light Mode
-                        </div>
-                        <div class="radio">
-                            <input type="radio" name="radio">
-                            <span class="material-symbols-outlined">
-                                Contrast
-                            </span>
-                             High Contrast
-                        </div>
-                    </div>
-                    <div id="GameMod" class="SettingOptions">
-                        Game Modifiers:
-                        <div class="checkbox">
-                            <input type="checkbox" name="checkbox">
-                                <span id="checkboxText">
-                                    Hard: Hide Country Names
-                                </span> 
-                        </div>
-                        <div class="checkbox">
-                            <input type="checkbox" name="checkbox">
-                                <span id="checkboxText">
-                                    Expert: Hide Map
-                                </span> 
-                        </div>
-                    </div>
-                    <div id="Language" class="SettingOptions">
-                        Language:
-                    </div>
-                    <button id="CancelButton" class="Cancel">
+    <div class="main-content">
+        <div class="gameText">
+            Waikato to Otago
+        </div>
+        <div class="gameBackground">
+
+        </div>
+    </div>
+    <div id= "settingsMenu" class="popup" style="display:none;">
+        <div class="overlay">
+            <div class="popupContent">
+                <button id="CancelButton" class="Cancel">
+                    <span class="material-symbols-outlined">
+                        Cancel
+                    </span>                    
+                </button>
+                <div class="Title">Settings</div>
+                <div id="ColourScheme" class="SettingOptions">
+                    Colour Scheme:
+                    <div class="radio" >
+                       
+                        <input type="radio" name="radio" id="DarkMode" onclick="darkMode()"> 
                         <span class="material-symbols-outlined">
-                            Cancel
-                        </span>                    
-                    </button>
+                            Dark_Mode
+                        </span>
+                        Dark Mode
+                    </div>
+                    <div class="radio">
+                        
+                        <input type="radio" name="radio" id="LightMode" onclick="lightMode()">
+                        <span class="material-symbols-outlined">
+                            Light_Mode
+                        </span>
+                        Light Mode
+                    </div>
+                    <div class="radio">
+                        <input type="radio" name="radio">
+                        <span class="material-symbols-outlined">
+                            Contrast
+                        </span>
+                         High Contrast
+                    </div>
+                </div>
+                <div id="GameMod" class="SettingOptions">
+                    Game Modifiers:
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox">
+                            <span id="checkboxText">
+                                Hard: Hide Country Names
+                            </span> 
+                    </div>
+                    <div class="checkbox">
+                        <input type="checkbox" name="checkbox">
+                            <span id="checkboxText">
+                                Expert: Hide Map
+                            </span> 
+                    </div>
+                </div>
+                <div id="Language" class="SettingOptions">
+                    Language:
                 </div>
             </div>
         </div>
-      </div>
+    </div>
 </body>
 </html>
