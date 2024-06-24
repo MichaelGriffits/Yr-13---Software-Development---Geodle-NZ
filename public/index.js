@@ -24,5 +24,7 @@ window.onload = function( ) {
 
 function selectedRegion(){
     var regionInput = document.getElementById('region').value;
-    print(regionInput);
+    console.log(regionInput);
+    document.getElementById('inputField').value=regionInput ; 
+
 }
