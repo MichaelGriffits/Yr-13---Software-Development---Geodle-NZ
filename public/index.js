@@ -19,4 +19,10 @@ window.onload = function( ) {
         element.classList.toggle("light-mode");
     }
 
+    var regions = ["Ashburton","Auckland", "Buller","Carterton","Central Hawks Bay","Central Otago","Christchurch","Clutha","Coromandel","Dunedin","Far North","Gisborne","Gore","Grey","Hamilton","Hastings","Hauraki","Horowhenua","Hurunio","Kaikoura","Kaipara","Kapiti Coast","Lower Hutt","Mackenzie","Manawatu","Marlborough","Masterton","Matamata-Piako","Nelson","New Plymouth","Opotiki","Palmerston North","Porirua","Queenstown","Rangitikei","Rotorua","Ruapehu","Selwyn","South Taranaki","South Waikato","South Wairarapa","Southland","Stratford","Tararua","Taupo","Upperhutt","Waikato","Waimakariri","Waimate","Waipa","Wairoa","Waitaki","Waitomo","Wellington","Western Bay of Plenty","Westland","Whaketane","Whananui","Whangarei"];
+}
+
+function selectedRegion(){
+    var regionInput = document.getElementById('region').value;
+    print(regionInput);
 }

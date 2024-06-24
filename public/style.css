@@ -186,7 +186,7 @@
       .regionInput{
         padding: 10px;
         height: 30px;
-        width: 46rem;
+        width: 37.8rem;
         margin-left: 36rem; 
         margin-top: 20px;      
         border: solid, #fca24f;
@@ -194,10 +194,57 @@
         border-radius: 15px;
         font-size: 20px;
         font-family: Lexend;
+        border-right-color: #fca24f;
+        border-right-width: 4px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        color: #46bbe5;
       }
+
+      .regionInput::placeholder{
+        color: #798c93;
+      }
+
       .regionInput:focus {
         outline-style: none;
         box-shadow: none;
-        border-color: #fca24f;
-        color: #637579;
+        color: #46bbe5;
       }
+
+      datalist{
+        display: none;
+      }
+      .submitRegion{
+        padding: 10px;
+        height: 3.5rem;
+        width: 8rem;
+        margin-left: -0.5rem;
+        border: solid, #fca24f;
+        border-left-style: none;
+        border-radius: 15px;
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        background-color: white;
+        color: #46bbe5;
+        font-size: 20px;
+        font-family: Lexend;
+      }
+
+      .submitRegion:hover{
+        box-shadow: 3px;
+        color: #43acd3;
+        background-color: rgb(250, 250, 250);
+      }
+
+      .vertical {
+        border-left: 3px solid #46bbe5;
+        position: absolute;
+        margin-left: 75.3rem;
+        margin-top: -2.5rem;
+        height: 25px;
+        border-radius: 4px;
+        }
+
+        .regionsList{
+          width: 100px;
+        }
