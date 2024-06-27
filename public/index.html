@@ -53,10 +53,17 @@
         </div>
         <div class="gameBackground">
         </div>
-        <div>
-            <input type="myInput" class="regionInput" list="regionsOfNZ" placeholder="Input Region", id="inputField">
+        <div id="dropdown-textbox">
+                <div class="dropdown-top">
+                    <form>
+                    <input id="inputField" type="text" placeholder="Input Region" class="regionInput" autocomplete="off"></input>
+                    <input type="submit" class="submitRegion">
+                </form>
+    
+                </div>
+                <div id="dropdownbuttons" class="dropdown-items">
+                </div>
             <div class= "vertical"></div>
-            <input type="submit" class="submitRegion">
         </div>
         <div>
             <!---<select id="region" onchange="selectedRegion()" class="regionsList">
