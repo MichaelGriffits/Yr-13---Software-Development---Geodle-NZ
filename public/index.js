@@ -93,10 +93,12 @@ window.onload = function() {
 
             if (region === "Ashburton" && AshburtonSVG) {
                 AshburtonSVG.style.filter = "brightness(0) saturate(100%) invert(79%) sepia(15%) saturate(4066%) hue-rotate(324deg) brightness(105%) contrast(98%)";
+                AshburtonSVG.style.opacity = 100;
             } else if (region === "Auckland" && AucklandSVG){
                 AucklandSVG.style.filter = "brightness(0) saturate(100%) invert(79%) sepia(15%) saturate(4066%) hue-rotate(324deg) brightness(105%) contrast(98%)";
+                AucklandSVG.style.opacity= 100;
             } else if (AshburtonSVG) {
-                AshburtonSVG.style.filter = "none"; 
+               return null; 
             }
 
             entry.value = "";
