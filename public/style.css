@@ -345,13 +345,84 @@
 }
 
 #AshburtonSVG {
-  opacity: 0;
-  margin-top: 21.2rem;
-  margin-left: 9.9rem;
+  opacity: 10;
+  margin-top: 21.18rem;
+  margin-left: 9.6rem;
 }
  
 #AucklandSVG{
   opacity: 0;
-  margin-top: 5.4rem;
-  margin-left: 23.03rem;
+  margin-top: 5.5rem;
+  margin-left: 15.6rem;
+}
+
+#BullerSVG{
+  opacity: 0;
+  margin-top:  15.9rem;
+  margin-left: 10.7rem;
+}
+
+#CartertonSVG{
+  opacity: 0;
+  margin-top: 16rem;
+  margin-left: 17.5rem;
+}
+
+#CentralHawksBaySVG{
+  opacity:  0;
+  margin-top: 13.5rem;
+  margin-left: 18.9rem;
+}
+
+#CentralOtagoSVG{
+  opacity:  0;
+  margin-top: 24.4rem;
+  margin-left: 7.313rem;
+}
+
+#ChristchurchSVG{
+  opacity: 0;
+  margin-top: 21.7rem;
+  margin-left: 12.8rem;
+}
+
+#CluthaSVG{
+  opacity: 0;
+  margin-top: 26.46rem;
+  margin-left: 7.69rem;
+}
+#CoromandelSVG{
+  opacity: 0;
+  margin-top: 6.4rem;
+  margin-left: 17.65rem;
+}
+
+#DunedinSVG{
+  opacity: 0;
+  margin-top: 25.95rem;
+  margin-left: 8.77rem;
+}
+
+#FarNorthSVG{
+  opacity: 0;
+  margin-top: 1.75rem;
+  margin-left: 12.9rem;
+}
+
+#GisborneSVG{
+  opacity: 0;
+  margin-top: 8.89rem;
+  margin-left: 20.9rem;
+}
+
+#GreySVG{
+  opacity: 0;
+  margin-top: 19.05rem;
+  margin-left: 10.34rem;
+}
+
+#WestlandSVG{
+  opacity: 0;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
 }

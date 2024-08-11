@@ -81,26 +81,42 @@ window.onload = function() {
     document.getElementById('regionForm').addEventListener('submit', function(event) {
         event.preventDefault();
         let region = entry.value.trim();
-        const AshburtonSVG = document.getElementById("AshburtonSVG");
-        const AucklandSVG = document.getElementById("AucklandSVG");
+        
+        // Mapping of regions to their corresponding SVG elements
+        const regionSVGMap = {
+            "Ashburton": document.getElementById("AshburtonSVG"),
+            "Auckland": document.getElementById("AucklandSVG"),
+            "Buller": document.getElementById("BullerSVG"),
+            "Carterton": document.getElementById("CartertonSVG"),
+            "Central Hawks Bay": document.getElementById("CentralHawksBaySVG"),
+            "Central Otago": document.getElementById("CentralOtagoSVG"),
+            "Christchurch" : document.getElementById("ChristchurchSVG"),
+            "Clutha": document.getElementById("CluthaSVG"),
+            "Coromandel": document.getElementById("CoromandelSVG"),
+            "Dunedin": document.getElementById("DunedinSVG"),
+            "Far North": document.getElementById("FarNorthSVG"),
+            "Gisborne": document.getElementById("GisborneSVG"),
+            "Grey": document.getElementById("GreySVG"),
+            "Westland": document.getElementById("WestlandSVG"),
 
+        };
+    
+        // Default filter style
+        const filterStyle = "brightness(0) saturate(100%) invert(79%) sepia(15%) saturate(4066%) hue-rotate(324deg) brightness(105%) contrast(98%)";
+    
         if (region !== "" && regions.includes(region) && !selectedRegionsList.includes(region)) {
             selectedRegionsList.push(region);
             let regionTag = document.createElement("div");
             regionTag.className = "region-tag";
             regionTag.innerText = region;
             selectedRegions.appendChild(regionTag);
-
-            if (region === "Ashburton" && AshburtonSVG) {
-                AshburtonSVG.style.filter = "brightness(0) saturate(100%) invert(79%) sepia(15%) saturate(4066%) hue-rotate(324deg) brightness(105%) contrast(98%)";
-                AshburtonSVG.style.opacity = 100;
-            } else if (region === "Auckland" && AucklandSVG){
-                AucklandSVG.style.filter = "brightness(0) saturate(100%) invert(79%) sepia(15%) saturate(4066%) hue-rotate(324deg) brightness(105%) contrast(98%)";
-                AucklandSVG.style.opacity= 100;
-            } else if (AshburtonSVG) {
-               return null; 
+    
+            // Apply the filter and opacity if the region matches
+            if (regionSVGMap[region]) {
+                regionSVGMap[region].style.filter = filterStyle;
+                regionSVGMap[region].style.opacity = 100;
             }
-
+    
             entry.value = "";
             entry.dispatchEvent(new Event('keyup'));
         }
