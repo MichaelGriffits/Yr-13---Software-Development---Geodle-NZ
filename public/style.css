@@ -345,7 +345,7 @@
 }
 
 #AshburtonSVG {
-  opacity: 10;
+  opacity: 0;
   margin-top: 21.18rem;
   margin-left: 9.6rem;
 }
@@ -369,9 +369,9 @@
 }
 
 #CentralHawksBaySVG{
-  opacity:  0;
-  margin-top: 13.5rem;
-  margin-left: 18.9rem;
+  opacity: 0;
+  margin-top: 13.44rem;
+  margin-left: 19.02rem;
 }
 
 #CentralOtagoSVG{
@@ -415,10 +415,28 @@
   margin-left: 20.9rem;
 }
 
+#GoreSVG{
+  opacity: 0;
+  margin-top: 27.18rem;
+  margin-left: 7.45rem;
+}
+
 #GreySVG{
   opacity: 0;
   margin-top: 19.05rem;
   margin-left: 10.34rem;
+}
+
+#HastingsSVG{
+  opacity: 0;
+  margin-top: 12.06rem;
+  margin-left: 19.2rem;
+}
+
+#HaurakiSVG{
+  opacity: 0;
+  margin-top: 7.63rem;
+  margin-left: 17.55rem;
 }
 
 #WestlandSVG{

@@ -96,8 +96,13 @@ window.onload = function() {
             "Dunedin": document.getElementById("DunedinSVG"),
             "Far North": document.getElementById("FarNorthSVG"),
             "Gisborne": document.getElementById("GisborneSVG"),
+            "Gore": document.getElementById("GoreSVG"),
             "Grey": document.getElementById("GreySVG"),
+            "Hastings": document.getElementById("HastingsSVG"),
+            "Hauraki": document.getElementById("HaurakiSVG"),
+            
             "Westland": document.getElementById("WestlandSVG"),
+            
 
         };
     
