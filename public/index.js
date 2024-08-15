@@ -170,7 +170,7 @@ window.onload = function () {
         Kaikoura: document.getElementById("KaikouraSVG"),
         Kaipara: document.getElementById("KaiparaSVG"),
         "Kapiti Coast": document.getElementById("KapitiCoastSVG"),
-        "Lower Hutt": document.getElementById("KapitiCoastSVG"),
+        "Lower Hutt": document.getElementById("LowerHuttSVG"),
         Mackenzie: document.getElementById("MackenzieSVG"),
         Marlborough: document.getElementById("MalboroughSVG"),
         Manawatu: document.getElementById("ManawatuSVG"),

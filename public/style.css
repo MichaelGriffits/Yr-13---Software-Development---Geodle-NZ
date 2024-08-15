@@ -341,102 +341,199 @@ datalist {
 }
 
 #AshburtonSVG {
-  opacity: 0;
-  margin-top: 21.18rem;
+  opacity: 10;
+  margin-top: 21.12rem;
   margin-left: 9.6rem;
 }
 
 #AucklandSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 5.5rem;
   margin-left: 15.6rem;
 }
 
 #BullerSVG {
-  opacity: 0;
-  margin-top: 15.9rem;
-  margin-left: 10.7rem;
+  opacity: 10;
+  margin-top: 16.47rem;
+  margin-left: 10.6rem;
 }
 
 #CartertonSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 16rem;
   margin-left: 17.5rem;
 }
 
 #CentralHawksBaySVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 13.44rem;
   margin-left: 19.02rem;
 }
 
 #CentralOtagoSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 24.4rem;
   margin-left: 7.313rem;
 }
 
 #ChristchurchSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 21.7rem;
   margin-left: 12.8rem;
 }
 
 #CluthaSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 26.46rem;
   margin-left: 7.69rem;
 }
 #CoromandelSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 6.4rem;
   margin-left: 17.65rem;
 }
 
 #DunedinSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 25.95rem;
   margin-left: 8.77rem;
 }
 
 #FarNorthSVG {
-  opacity: 0;
-  margin-top: 1.75rem;
-  margin-left: 12.9rem;
+  opacity: 10;
+  margin-top: 2.25rem;
+  margin-left: 13.14rem;
 }
 
 #GisborneSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 8.89rem;
   margin-left: 20.9rem;
 }
 
 #GoreSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 27.18rem;
   margin-left: 7.45rem;
 }
 
 #GreySVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 19.05rem;
   margin-left: 10.34rem;
 }
 
 #HastingsSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 12.06rem;
   margin-left: 19.2rem;
 }
 
 #HaurakiSVG {
-  opacity: 0;
+  opacity: 10;
   margin-top: 7.63rem;
   margin-left: 17.55rem;
 }
 
-#WestlandSVG {
-  opacity: 0;
+#HurunuiSVG {
+  opacity: 10;
+  margin-top: 19.2rem;
+  margin-left: 11.5rem;
+}
+
+#KaikouraSVG {
+  opacity: 10;
+  margin-top: 18.9rem;
+  margin-left: 13.2rem;
+}
+
+#KaiparaSVG {
+  opacity: 10;
+  margin-top: 4.75rem;
+  margin-left: 14.55rem;
+}
+
+#KapitiCoastSVG {
+  opacity: 10;
+  margin-top: 15.9rem;
+  margin-left: 16.92rem;
+}
+
+#LowerHuttSVG {
+  opacity: 10;
   margin-top: 20.05rem;
   margin-left: 5.9rem;
 }
+
+#MackenzieSVG {
+  opacity: 10;
+  margin-top: 21.9rem;
+  margin-left: 8.53rem;
+}
+
+#MalboroughSVG {
+  opacity: 10;
+  margin-top: 16.8rem;
+  margin-left: 12.6rem;
+}
+
+#ManawatuSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#MastertonSVG {
+  opacity: 10;
+  margin-top: 16.1rem;
+  margin-left: 17.72rem;
+}
+
+#MatamataSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#NelsonSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#NewPlymouthSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#OpotikiSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#PalmerstonNorthSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#PoriruaSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
+#QeeenstonSVG {
+  opacity: 10;
+  margin-top: 23rem;
+  margin-left: 6.15rem;
+}
+
+#WestlandSVG {
+  opacity: 10;
+  margin-top: 20.05rem;
+  margin-left: 5.9rem;
+}
+
