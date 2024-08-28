@@ -340,200 +340,157 @@ datalist {
   font-size: 18px;
 }
 
-#AshburtonSVG {
-  opacity: 10;
-  margin-top: 21.12rem;
-  margin-left: 9.6rem;
+#svg3450{
+  margin-top: -10rem;
+  margin-left: 10rem;
 }
 
-#AucklandSVG {
-  opacity: 10;
-  margin-top: 5.5rem;
-  margin-left: 15.6rem;
+:root {
+  --default-color: #9cc5a1;
+  --hover-color: #7a9b7f;
+  --light-up-color: rgba(209, 85, 118, 0.7);
 }
 
-#BullerSVG {
-  opacity: 10;
-  margin-top: 16.47rem;
-  margin-left: 10.6rem;
+#Northland{
+  fill:  var(--default-color);
+  cursor: pointer;
 }
 
-#CartertonSVG {
-  opacity: 10;
-  margin-top: 16rem;
-  margin-left: 17.5rem;
+#Northland:hover {
+  fill: var(--hover-color);
 }
 
-#CentralHawksBaySVG {
-  opacity: 10;
-  margin-top: 13.44rem;
-  margin-left: 19.02rem;
+#Auckland{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#CentralOtagoSVG {
-  opacity: 10;
-  margin-top: 24.4rem;
-  margin-left: 7.313rem;
+#Auckland:hover {
+  fill: var(--hover-color);
 }
 
-#ChristchurchSVG {
-  opacity: 10;
-  margin-top: 21.7rem;
-  margin-left: 12.8rem;
+#Waikato{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#CluthaSVG {
-  opacity: 10;
-  margin-top: 26.46rem;
-  margin-left: 7.69rem;
-}
-#CoromandelSVG {
-  opacity: 10;
-  margin-top: 6.4rem;
-  margin-left: 17.65rem;
+#Waikato:hover {
+  fill: var(--hover-color);
 }
 
-#DunedinSVG {
-  opacity: 10;
-  margin-top: 25.95rem;
-  margin-left: 8.77rem;
+#BoP{
+  fill: var(--light-up-color);
+  cursor: pointer;
 }
 
-#FarNorthSVG {
-  opacity: 10;
-  margin-top: 2.25rem;
-  margin-left: 13.14rem;
+#BoP:hover{
+  fill: var(--hover-color);
 }
 
-#GisborneSVG {
-  opacity: 10;
-  margin-top: 8.89rem;
-  margin-left: 20.9rem;
+#Gisborne{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#GoreSVG {
-  opacity: 10;
-  margin-top: 27.18rem;
-  margin-left: 7.45rem;
+#Gisborne:hover{
+  fill: var(--hover-color);
 }
 
-#GreySVG {
-  opacity: 10;
-  margin-top: 19.05rem;
-  margin-left: 10.34rem;
+#Hawkes-Bay{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#HastingsSVG {
-  opacity: 10;
-  margin-top: 12.06rem;
-  margin-left: 19.2rem;
+#Hawkes-Bay:hover{
+  fill: var(--hover-color);
 }
 
-#HaurakiSVG {
-  opacity: 10;
-  margin-top: 7.63rem;
-  margin-left: 17.55rem;
+#Taranaki{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#HurunuiSVG {
-  opacity: 10;
-  margin-top: 19.2rem;
-  margin-left: 11.5rem;
+#Taranaki:hover{
+  fill: var(--hover-color);
 }
 
-#KaikouraSVG {
-  opacity: 10;
-  margin-top: 18.9rem;
-  margin-left: 13.2rem;
+#Manawatu{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#KaiparaSVG {
-  opacity: 10;
-  margin-top: 4.75rem;
-  margin-left: 14.55rem;
+#Manawatu:hover{
+  fill: var(--hover-color);
 }
 
-#KapitiCoastSVG {
-  opacity: 10;
-  margin-top: 15.9rem;
-  margin-left: 16.92rem;
+#Wellington{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#LowerHuttSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Wellington:hover{
+  fill: var(--hover-color);
 }
 
-#MackenzieSVG {
-  opacity: 10;
-  margin-top: 21.9rem;
-  margin-left: 8.53rem;
+#Westland{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#MalboroughSVG {
-  opacity: 10;
-  margin-top: 16.8rem;
-  margin-left: 12.6rem;
+#Westland:hover{
+  fill: var(--hover-color);
 }
 
-#ManawatuSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Nelson{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#MastertonSVG {
-  opacity: 10;
-  margin-top: 16.1rem;
-  margin-left: 17.72rem;
+#Nelson:hover{
+  fill: var(--hover-color);
 }
 
-#MatamataSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Otago{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#NelsonSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Otago:hover{
+  fill: var(--hover-color);
 }
 
-#NewPlymouthSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Southland{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#OpotikiSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Southland:hover{
+  fill: var(--hover-color);
 }
 
-#PalmerstonNorthSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Tasman{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#PoriruaSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Tasman:hover{
+  fill: var(--hover-color);
 }
 
-#QeeenstonSVG {
-  opacity: 10;
-  margin-top: 23rem;
-  margin-left: 6.15rem;
+#Marlborough{
+  fill: var(--default-color);
+  cursor: pointer;
 }
 
-#WestlandSVG {
-  opacity: 10;
-  margin-top: 20.05rem;
-  margin-left: 5.9rem;
+#Marlborough:hover{
+  fill: var(--hover-color);
 }
 
+#Nelson{
+  fill: var(--default-color);
+  cursor: pointer;
+}
+
+#Nelson:hover{
+  fill: var(--hover-color);
+}
