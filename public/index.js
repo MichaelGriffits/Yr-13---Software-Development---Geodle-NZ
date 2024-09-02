@@ -29,7 +29,7 @@ window.onload = function () {
     "Gisborne",
     "Hawke's Bay",
     "Manawatu",
-    "Marlbourough",
+    "Marlborough",
     "Nelson",
     "Northland",
     "Otago",
@@ -38,10 +38,12 @@ window.onload = function () {
     "Tasman",
     "Waikato",
     "Wellington",
-    "West Coast", 
+    "Westland",
   ];
 
-  const selectedRegionsList = [];
+  let lastHighlightedRegion = null;
+  let spacebarUsed = false;
+  const correctlyAnsweredRegions = new Set();
 
   for (let i = 0; i < regions.length; i++) {
     let button = document.createElement("button");
@@ -53,13 +55,7 @@ window.onload = function () {
     dropdown.appendChild(button);
   }
 
-  function selectedRegion() {
-    var regionInput = document.getElementById("region").value;
-    console.log(regionInput);
-    document.getElementById("inputField").value = regionInput;
-  }
-
-  entry.addEventListener("keyup", function () {
+  entry.addEventListener("keyup", function (event) {
     let entryLength = entry.value.length;
 
     if (entryLength > 0) {
@@ -73,10 +69,7 @@ window.onload = function () {
 
     for (let i = 0; i < buttons.length; i++) {
       let buttonValue = buttons[i].textContent.toLowerCase();
-      if (
-        buttonValue.includes(entryValue) &&
-        !selectedRegionsList.includes(buttons[i].textContent)
-      ) {
+      if (buttonValue.includes(entryValue)) {
         buttons[i].style.display = "block";
 
         let originalText = buttons[i].textContent;
@@ -104,67 +97,87 @@ window.onload = function () {
       event.preventDefault();
       let region = entry.value.trim();
 
-      // Mapping of regions to their corresponding SVG elements
       const regionSVGMap = {
-        Ashburton: document.getElementById("AshburtonSVG"),
-        Auckland: document.getElementById("AucklandSVG"),
-        Buller: document.getElementById("BullerSVG"),
-        Carterton: document.getElementById("CartertonSVG"),
-        "Central Hawks Bay": document.getElementById("CentralHawksBaySVG"),
-        "Central Otago": document.getElementById("CentralOtagoSVG"),
-        Christchurch: document.getElementById("ChristchurchSVG"),
-        Clutha: document.getElementById("CluthaSVG"),
-        Coromandel: document.getElementById("CoromandelSVG"),
-        Dunedin: document.getElementById("DunedinSVG"),
-        "Far North": document.getElementById("FarNorthSVG"),
-        Gisborne: document.getElementById("GisborneSVG"),
-        Gore: document.getElementById("GoreSVG"),
-        Grey: document.getElementById("GreySVG"),
-        Hastings: document.getElementById("HastingsSVG"),
-        Hauraki: document.getElementById("HaurakiSVG"),
-        Horowhenua: document.getElementById("HorowhenuaSVG"),
-        Hurunui: document.getElementById("HurunuiSVG"),
-        Kaikoura: document.getElementById("KaikouraSVG"),
-        Kaipara: document.getElementById("KaiparaSVG"),
-        "Kapiti Coast": document.getElementById("KapitiCoastSVG"),
-        "Lower Hutt": document.getElementById("LowerHuttSVG"),
-        Mackenzie: document.getElementById("MackenzieSVG"),
-        Marlborough: document.getElementById("MalboroughSVG"),
-        Manawatu: document.getElementById("ManawatuSVG"),
-        Masterton: document.getElementById("MastertonSVG"),
-        "Matamata-Piako": document.getElementById("MatamataSVG"),
-        Nelson: document.getElementById("NelsonSVG"),
-        "New Plymouth": document.getElementById("NewPlymouthSVG"),
-        Opotiki: document.getElementById("OpotikiSVG"),
-        "Palmerston North": document.getElementById("PalmerstonNorthSVG"),
-        Porirua: document.getElementById("PoriruaSVG"),
-        Queenstown: document.getElementById("QeeenstonSVG"),
-        Westland: document.getElementById("WestlandSVG"),
+        Auckland: document.getElementById("Auckland"),
+        "Bay of Plenty": document.getElementById("BoP"),
+        Canterbury: document.getElementById("Canterbury"),
+        Gisborne: document.getElementById("Gisborne"),
+        "Hawke's Bay": document.getElementById("Hawkes-Bay"),
+        Marlborough: document.getElementById("Marlborough"),
+        Manawatu: document.getElementById("Manawatu"),
+        Nelson: document.getElementById("Nelson"),
+        Northland: document.getElementById("Northland"),
+        Otago: document.getElementById("Otago"),
+        Southland: document.getElementById("Southland"),
+        Taranaki: document.getElementById("Taranaki"),
+        Tasman: document.getElementById("Tasman"),
+        Waikato: document.getElementById("Waikato"),
+        Wellington: document.getElementById("Wellington"),
+        Westland: document.getElementById("Westland"),
       };
 
-      // Default filter style
-      const filterStyle =
-        "brightness(0) saturate(100%) invert(79%) sepia(15%) saturate(4066%) hue-rotate(324deg) brightness(105%) contrast(98%)";
-
-      if (
-        region !== "" &&
-        regions.includes(region) &&
-        !selectedRegionsList.includes(region)
-      ) {
-        selectedRegionsList.push(region);
-        let regionTag = document.createElement("div");
-        regionTag.className = "region-tag";
-        regionTag.innerText = region;
-        selectedRegions.appendChild(regionTag);
-
-        // Apply the filter and opacity if the region matches
+      if (region !== "" && region === lastHighlightedRegion) {
+        // Change the color to #9cc5a1 for the correctly entered region
         if (regionSVGMap[region]) {
-          regionSVGMap[region].style.filter = filterStyle;
-          regionSVGMap[region].style.opacity = 100;
+          regionSVGMap[region].style.fill = "#9cc5a1";
         }
 
+        // Mark the region as correctly answered
+        correctlyAnsweredRegions.add(region);
+
+        // Clear the input and trigger the dropdown update
         entry.value = "";
         entry.dispatchEvent(new Event("keyup"));
+
+        // Highlight a new random region
+        highlightRandomRegion();
       }
     });
+
+  function highlightRandomRegion() {
+    const remainingRegions = regions.filter(
+      (region) =>
+        region !== lastHighlightedRegion && !correctlyAnsweredRegions.has(region)
+    );
+
+    if (remainingRegions.length > 0) {
+      const randomIndex = Math.floor(Math.random() * remainingRegions.length);
+      const randomRegion = remainingRegions[randomIndex];
+
+      const regionSVGMap = {
+        Auckland: document.getElementById("Auckland"),
+        "Bay of Plenty": document.getElementById("BoP"),
+        Canterbury: document.getElementById("Canterbury"),
+        Gisborne: document.getElementById("Gisborne"),
+        "Hawke's Bay": document.getElementById("Hawkes-Bay"),
+        Marlborough: document.getElementById("Marlborough"),
+        Manawatu: document.getElementById("Manawatu"),
+        Nelson: document.getElementById("Nelson"),
+        Northland: document.getElementById("Northland"),
+        Otago: document.getElementById("Otago"),
+        Southland: document.getElementById("Southland"),
+        Taranaki: document.getElementById("Taranaki"),
+        Tasman: document.getElementById("Tasman"),
+        Waikato: document.getElementById("Waikato"),
+        Wellington: document.getElementById("Wellington"),
+        Westland: document.getElementById("Westland"),
+      };
+
+      // Highlight the new random region
+      if (regionSVGMap[randomRegion]) {
+        regionSVGMap[randomRegion].style.fill = "#f07d7d";
+        lastHighlightedRegion = randomRegion;
+      }
+    } else {
+      console.log("All regions have been highlighted.");
+    }
+  }
+
+  document.addEventListener("keydown", function (event) {
+    if (event.key === " " && !spacebarUsed && document.activeElement !== entry) {
+      event.preventDefault();
+      highlightRandomRegion();
+      spacebarUsed = true; // Disable spacebar after the first use
+    }
+  });
 };

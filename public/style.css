@@ -181,11 +181,11 @@ button:hover {
 }
 
 .initialRegion {
-  color: #9cc5a1;
+  color: #f07d7d;
 }
 
 .finalRegion {
-  color: #f07d7d;
+  color: #9cc5a1;
 }
 
 .regionInput {
@@ -323,6 +323,7 @@ datalist {
   text-decoration: underline;
   color: #fca24f;
 }
+
 #selectedRegions {
   display: flex;
   flex-wrap: wrap;
@@ -379,7 +380,7 @@ datalist {
 }
 
 #BoP{
-  fill: var(--light-up-color);
+  fill: var(--default-color);
   cursor: pointer;
 }
 
@@ -486,11 +487,11 @@ datalist {
   fill: var(--hover-color);
 }
 
-#Nelson{
+#Canterbury{
   fill: var(--default-color);
   cursor: pointer;
 }
 
-#Nelson:hover{
+#Canterbury:hover{
   fill: var(--hover-color);
 }
