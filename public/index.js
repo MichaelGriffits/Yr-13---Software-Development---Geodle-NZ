@@ -129,6 +129,11 @@ window.onload = function () {
         entry.value = "";
         entry.dispatchEvent(new Event("keyup"));
 
+        // Update the score text
+        document.getElementById(
+          "Score"
+        ).textContent = `${correctlyAnsweredRegions.size}/16`;
+
         // Highlight a new random region
         highlightRandomRegion();
       }
@@ -137,7 +142,8 @@ window.onload = function () {
   function highlightRandomRegion() {
     const remainingRegions = regions.filter(
       (region) =>
-        region !== lastHighlightedRegion && !correctlyAnsweredRegions.has(region)
+        region !== lastHighlightedRegion &&
+        !correctlyAnsweredRegions.has(region)
     );
 
     if (remainingRegions.length > 0) {
@@ -174,9 +180,14 @@ window.onload = function () {
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === " " && !spacebarUsed && document.activeElement !== entry) {
+    if (
+      event.key === " " &&
+      !spacebarUsed &&
+      document.activeElement !== entry
+    ) {
       event.preventDefault();
       highlightRandomRegion();
+      document.getElementById("initialRegion").textContent = `Name That Region`;
       spacebarUsed = true; // Disable spacebar after the first use
     }
   });
