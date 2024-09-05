@@ -528,6 +528,7 @@ datalist {
 
 /*Light Mode Styles */
 .light-mode,
+.light-mode .dropdown-items,
 .light-mode .regionInput,
 .light-mode .submitRegion {
   background-color: #f0f0f0; /* Light background for light mode */
@@ -536,6 +537,8 @@ datalist {
 /* Dark Mode Styles */
 .dark-mode,
 .dark-mode .regionInput,
+.dark-mode .dropdown-items button,
+.dark-mode .dropdown-items,
 .dark-mode .submitRegion {
   background-color: #302f2f; /* Dark background for dark mode */
 }

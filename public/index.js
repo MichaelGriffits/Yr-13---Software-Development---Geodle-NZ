@@ -26,7 +26,7 @@ window.onload = function () {
   // Initialize variables
   const entry = document.getElementById("inputField");
   const dropdown = document.getElementById("dropdownbuttons");
-  const guessedRegionsContainer = document.getElementById("guessedRegionsContainer"); // Container for guessed regions
+  const guessedRegionsContainer = document.getElementById("guessedRegionsContainer");
   const regions = [
     "Auckland",
     "Bay of Plenty",
@@ -53,7 +53,7 @@ window.onload = function () {
 
   // Initialize dropdown
   function initializeDropdown() {
-    dropdown.innerHTML = ''; // Clear existing buttons
+    dropdown.innerHTML = '';
     for (let i = 0; i < regions.length; i++) {
       let button = document.createElement("button");
       button.textContent = regions[i];
@@ -66,6 +66,11 @@ window.onload = function () {
   }
 
   initializeDropdown();
+
+  // Prevent the blur event when clicking on the dropdown
+  dropdown.addEventListener("mousedown", (event) => {
+    event.preventDefault();
+  });
 
   // Update dropdown based on input
   function updateDropdown() {
@@ -106,7 +111,7 @@ window.onload = function () {
   entry.addEventListener("blur", function () {
     setTimeout(function () {
       dropdown.style.display = "none";
-    }, 100);
+    }, 150);
   });
 
   document.getElementById("regionForm").addEventListener("submit", function (event) {
@@ -138,8 +143,6 @@ window.onload = function () {
       }
 
       correctlyAnsweredRegions.add(region);
-
-      // Display the guessed regions
       displayGuessedRegions();
 
       entry.value = "";
@@ -148,7 +151,6 @@ window.onload = function () {
       document.getElementById("Score").textContent = `Score: ${correctlyAnsweredRegions.size}/16`;
 
       highlightRandomRegion();
-
       checkIfAllRegionsCorrect();
     } else {
       shakeScreen();
@@ -157,13 +159,13 @@ window.onload = function () {
 
   // Display guessed regions
   function displayGuessedRegions() {
-    guessedRegionsContainer.innerHTML = ''; // Clear previous entries
+    guessedRegionsContainer.innerHTML = '';
 
     correctlyAnsweredRegions.forEach(region => {
-      const regionElement = document.createElement('div'); // Create a new div for each guessed region
-      regionElement.textContent = region; // Set the text content
-      regionElement.classList.add('guessed-region'); // Add a class for styling
-      guessedRegionsContainer.appendChild(regionElement); // Append the new div to the container
+      const regionElement = document.createElement('div');
+      regionElement.textContent = region;
+      regionElement.classList.add('guessed-region');
+      guessedRegionsContainer.appendChild(regionElement);
     });
   }
 
@@ -173,11 +175,11 @@ window.onload = function () {
       dropdown.style.display = "none";
     }
   });
-  
+
   document.getElementById("hardMode").addEventListener("change", function () {
     hardMode = this.checked;
     if (hardMode) {
-      guessedRegionsContainer.style.display = "none"; // Hide guessed regions container in expert mode
+      guessedRegionsContainer.style.display = "none";
     }
   });
 
@@ -235,7 +237,7 @@ window.onload = function () {
   function shakeScreen() {
     const body = document.body;
     body.classList.add("shake");
-    setTimeout(() => body.classList.remove("shake"), 1000); // Remove class after 1 second
+    setTimeout(() => body.classList.remove("shake"), 1000);
   }
 
   function checkIfAllRegionsCorrect() {
@@ -245,20 +247,32 @@ window.onload = function () {
         spread: 70,
         origin: { y: 0.6 }
       });
-      document.getElementById("initialRegion").textContent = "16 out of 16! Well done!";
+      document.getElementById("initialRegion").textContent = "16 out of 16 Great Job, Press SPACE to Play Again";
+      spacebarUsed = false; // Allow space bar to restart game
     }
   }
 
-  function startGame(){
+  function startGame() {
     document.getElementById("initialOverlay").style.display = "none";
+    document.getElementById("initialRegion").textContent = "Name That Region";
+    correctlyAnsweredRegions.clear(); // Clear guessed regions
+    guessedRegionsContainer.innerHTML = ''; // Clear displayed guessed regions
+    document.getElementById("Score").textContent = `Score: ${correctlyAnsweredRegions.size}/16`;
+    lastHighlightedRegion = null; // Reset highlighted region
+    highlightRandomRegion(); // Highlight a new random region       
   }
 
   document.addEventListener("keydown", function (event) {
-    if (event.key === " " && !spacebarUsed) {
+    if (event.key === " " && (correctlyAnsweredRegions.size === regions.length || !spacebarUsed)) {
       event.preventDefault();
-      highlightRandomRegion();
-      document.getElementById("initialRegion").textContent = `Name That Region`;
-      startGame();
+      if (correctlyAnsweredRegions.size === regions.length) {
+        // If all regions guessed, restart the game
+        startGame();
+      } else {
+        // Start game if not already started
+        document.getElementById("initialOverlay").style.display = "none";
+        highlightRandomRegion();
+      }
       spacebarUsed = true; // Disable spacebar after the first use
     }
   });
@@ -267,11 +281,11 @@ window.onload = function () {
   const style = document.createElement('style');
   style.innerHTML = `
     .guessed-region {
-    color: #637579;
-    padding: 0.5rem 2rem;
-    padding-left: 0rem;
-    font-family: Lexend;
-    font-size: 18px;
+      color: #637579;
+      padding: 0.5rem 2rem;
+      padding-left: 0rem;
+      font-family: Lexend;
+      font-size: 18px;
     }
   `;
   document.head.appendChild(style);
