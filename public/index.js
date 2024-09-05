@@ -270,8 +270,7 @@ window.onload = function () {
         startGame();
       } else {
         // Start game if not already started
-        document.getElementById("initialOverlay").style.display = "none";
-        highlightRandomRegion();
+        startGame();
       }
       spacebarUsed = true; // Disable spacebar after the first use
     }
