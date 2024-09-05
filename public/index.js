@@ -1,14 +1,25 @@
 window.onload = function () {
   // Show settings menu
-  const button = document.getElementById("settings");
-  button.addEventListener("click", () => {
+  const buttonSettings = document.getElementById("settings");
+  buttonSettings.addEventListener("click", () => {
     document.getElementById("settingsMenu").style.display = "block";
   });
 
+  //Show help menu
+  const buttonHelp = document.getElementById("help");
+  buttonHelp.addEventListener("click", ()=> {
+    document.getElementById("helpMenu").style.display = "block";
+  });
+
   // Hide settings menu
-  const buttonCancel = document.getElementById("CancelButton");
-  buttonCancel.addEventListener("click", () => {
+  const settingsCancel = document.getElementById("settingsCancelButton");
+  settingsCancel.addEventListener("click", () => {
     document.getElementById("settingsMenu").style.display = "none";
+  });
+
+  const helpCancel = document.getElementById("helpCancelButton");
+  helpCancel.addEventListener("click", () => {
+    document.getElementById("helpMenu").style.display = "none";
   });
 
   // Dark mode function

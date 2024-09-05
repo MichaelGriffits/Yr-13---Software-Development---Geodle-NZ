@@ -105,6 +105,15 @@ button:hover {
   border-radius: 1rem;
 }
 
+.popupHelpContent{
+  width: 60rem;
+  height: 35rem;
+  margin: 0 auto;
+  margin-top: 5%;
+  background-color: rgb(255, 255, 255);
+  border-radius: 1rem;
+}
+
 .Title {
   font-family: Lexend;
   font-size: 25pt;
@@ -575,4 +584,11 @@ datalist {
 
 #smile{
   color: #9cc5a1;
+}
+
+#helpText{
+  color: #637579;
+  font-family: Lexend;
+  padding-top: 10rem;
+  padding: 1rem;
 }
