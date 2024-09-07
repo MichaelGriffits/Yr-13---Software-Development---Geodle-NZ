@@ -1,594 +1,625 @@
-@font-face {
-  font-family: "Lexend";
-  src: url("/font");
-}
-
-* {
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  position: fixed;
-}
-
-.banner {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-}
-
-.banneritem {
-  text-align: center;
-  padding: 25px;
-  font-size: 5rem;
-  font-family: Lexend;
-  font-weight: 400;
-  color: #46bbe5;
-  height: 58px;
-  line-height: 1;
-  margin-top: -20px;
-}
-
-.main-content {
-  padding-top: 200px;
-}
-
-.alternate-text {
-  color: #fca24f;
-  display: inline;
-}
-
-.line {
-  background-color: #798c93;
-  width: 1920px;
-  height: 3px;
-}
-
-.material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
-  transform: scale(0.8);
-}
-
-.button {
-  color: #798c93;
-  background-color: rgba(0, 0, 0, 0);
-  border: none;
-  float: right;
-  margin: 30px;
-  margin-right: 0px;
-  padding-right: 0px;
-  padding-top: 1px;
-  transform: scale(2.3);
-  cursor: pointer;
-  position: absolute;
-  z-index: 10;
-}
-
-button:hover {
-  color: #637579;
-}
-
-#settings {
-  padding-left: 8.5rem;
-}
-
-#help{
-  padding-left: 6.4rem;
-}
-
-#menu{
-  padding-right: 31rem;
-}
-
-#menu {
-  float: left;
-}
-
-.overlay {
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  position: fixed;
-  top: -22px;
-  left: -22px;
-  margin-top: 22px;
-  margin-left: 22px;
-  z-index: 15;
-}
-
-.popupContent {
-  width: 24rem;
-  height: 35rem;
-  margin: 0 auto;
-  margin-top: 5%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
-}
-
-.popupHelpContent{
-  width: 60rem;
-  height: 35rem;
-  margin: 0 auto;
-  margin-top: 5%;
-  background-color: rgb(255, 255, 255);
-  border-radius: 1rem;
-}
-
-.Title {
-  font-family: Lexend;
-  font-size: 25pt;
-  font-weight: 400;
-  float: right;
-  margin-right: 7.5rem;
-}
-
-.SettingOptions {
-  font-family: Lexend;
-  font-size: 16pt;
-  font-weight: 300;
-  padding: 10px;
-  padding-bottom: 0px;
-  text-align: left;
-}
-.radio {
-  cursor: pointer;
-  font-size: 12pt;
-  margin-top: 10px;
-  margin-left: 30px;
-  line-height: 24px;
-  display: flex;
-  vertical-align: top;
-}
-
-.checkbox {
-  cursor: pointer;
-  font-size: 12pt;
-  margin-top: 10px;
-  margin-left: 30px;
-  line-height: 24px;
-  display: flex;
-  vertical-align: top;
-}
-
-#checkboxText {
-  font-size: 12pt;
-  margin-left: 5px;
-  line-height: 24px;
-  display: flex;
-  vertical-align: top;
-}
-
-.Cancel {
-  color: #798c93;
-  background-color: #ffffff00;
-  border: none;
-  margin-top: 0.5rem;
-  margin-left: 0.5rem;
-  transform: scale(1.5);
-  cursor: pointer;
-}
-
-.gameBackground {
-  background-color: #74ceef;
-  border: solid;
-  border-width: 0.3rem;
-  border-radius: 30pt;
-  border-color: #637579;
-  width: 47rem;
-  height: 32rem;
-  margin-top: 1rem;
-  margin-left: 36rem;
-  position: relative;
-}
-
-.game-background-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border-radius: 30pt;
-}
-.gameText {
-  font-family: Lexend;
-  font-size: 26pt;
-  text-align: center;
-  margin-top: -10.5rem;
-}
-
-#initialRegion {
-  color: #f07d7d;
-  margin-top: -15rem;
-}
-
-.finalRegion {
-  color: #9cc5a1;
-}
-
-.regionInput {
-  padding: 10px;
-  height: 30px;
-  width: 37.8rem;
-  margin-left: 36rem;
-  margin-top: 20px;
-  border: solid, #fca24f;
-  background-color: white;
-  border-radius: 15px;
-  font-size: 20px;
-  font-family: Lexend;
-  border-right-color: #fca24f;
-  border-right-width: 4px;
-  border-top-right-radius: 0px;
-  border-bottom-right-radius: 0px;
-  color: #46bbe5;
-}
-
-.regionInput::placeholder {
-  color: #798c93;
-}
-
-.regionInput:focus {
-  outline-style: none;
-  box-shadow: none;
-  color: #46bbe5;
-}
-
-datalist {
-  display: none;
-}
-
-#regionForm {
-  position: relative; /* Ensure form is positioned correctly */
-  z-index: 10; /* Bring form and elements above any potential overlapping elements */
-}
-
-.submitRegion {
-  padding: 10px;
-  height: 3.5rem;
-  width: 8rem;
-  margin-left: -0.5rem;
-  border: solid, #fca24f;
-  border-left-style: none;
-  border-radius: 15px;
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-  background-color: white;
-  color: #46bbe5;
-  font-size: 20px;
-  font-family: Lexend;
-  z-index: 11;
-}
-
-.submitRegion:hover {
-  box-shadow: 3px;
-  color: #43acd3;
-  background-color: rgb(250, 250, 250);
-}
-
-.vertical {
-  border-left: 3px solid #46bbe5;
-  position: absolute;
-  margin-left: 75.3rem;
-  margin-top: -2.5rem;
-  height: 25px;
-  border-radius: 4px;
-  z-index: 11;
-}
-
-.dropdown-top button {
-  width: 50%;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-  cursor: pointer;
-  padding: 1rem;
-}
-
-.dropdown-items button {
-  width: 100%;
-  text-align: left;
-  margin-top: 0rem;
-  padding: 0.9rem;
-  border: none;
-  border-bottom: 1px solid #798c93;
-  border-radius: 5px 0px 0px 0px;
-  background-color: #f9f9f9;
-  cursor: pointer;
-  color: #46bbe5;
-  font-family: Lexend;
-  font-size: 16px;
-}
-
-.dropdown-items button:hover {
-  background-color: rgba(0, 0, 0, 0.03);
-}
-
-.dropdown-items {
-  display: none;
-  position: absolute;
-  background-color: #f9f9f9;
-  width: 39rem;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
-  margin-left: 36rem;
-  overflow-y: scroll;
-  max-height: 12.4rem;
-  border-radius: 1rem;
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-  border-left: 1px solid #798c93;
-  border-right: 1px solid #798c93;
-  border-radius: 0rem 1rem 1rem 0rem;
-}
-
-::-webkit-scrollbar-track {
-  border-radius: 1rem;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #798c93;
-  border-radius: 0rem 1rem 1rem 0rem;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #637579;
-}
-
-.highlight {
-  text-decoration: underline;
-  color: #fca24f;
-}
-
-#guessedRegionsContainer {
-  display: flex;
-  flex-wrap: wrap;
-  width: 47rem;
-  margin-left: 36rem;
-  margin-top: 10px;
-}
-
-#guessed-region {
-  color: #637579;
-  padding: 0.5rem 2rem;
-  padding-left: 0rem;
-  font-family: Lexend;
-  font-size: 18px;
-}
-
-#svg3450{
-  margin-top: -10rem;
-  margin-left: 10rem;
-  z-index: 1;
-  position: relative;
-}
-
-:root {
-  --default-color: #9cc5a1;
-  --hover-color: #7a9b7f;
-  --light-up-color: rgba(209, 85, 118, 0.7);
-}
-
-#Northland{
-  fill:  var(--default-color);
-  cursor: pointer;
-}
-
-#Northland:hover {
-  fill: var(--hover-color);
-}
-
-#Auckland{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Auckland:hover {
-  fill: var(--hover-color);
-}
-
-#Waikato{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Waikato:hover {
-  fill: var(--hover-color);
-}
-
-#BoP{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#BoP:hover{
-  fill: var(--hover-color);
-}
-
-#Gisborne{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Gisborne:hover{
-  fill: var(--hover-color);
-}
-
-#Hawkes-Bay{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Hawkes-Bay:hover{
-  fill: var(--hover-color);
-}
-
-#Taranaki{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Taranaki:hover{
-  fill: var(--hover-color);
-}
-
-#Manawatu{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Manawatu:hover{
-  fill: var(--hover-color);
-}
-
-#Wellington{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Wellington:hover{
-  fill: var(--hover-color);
-}
-
-#Westland{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Westland:hover{
-  fill: var(--hover-color);
-}
-
-#Nelson{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Nelson:hover{
-  fill: var(--hover-color);
-}
-
-#Otago{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Otago:hover{
-  fill: var(--hover-color);
-}
-
-#Southland{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Southland:hover{
-  fill: var(--hover-color);
-}
-
-#Tasman{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Tasman:hover{
-  fill: var(--hover-color);
-}
-
-#Marlborough{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Marlborough:hover{
-  fill: var(--hover-color);
-}
-
-#Canterbury{
-  fill: var(--default-color);
-  cursor: pointer;
-}
-
-#Canterbury:hover{
-  fill: var(--hover-color);
-}
-
-#Score{
-  position: absolute;
-  margin-top: 0.5rem;
-  margin-left: 38.5rem;
-  font-size: 16pt;
-  font-family: Lexend;
-  color: white;
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-5px); }
-  50% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-.shake {
-  animation: shake 0.5s;
-}   
-
-/*Light Mode Styles */
-.light-mode,
-.light-mode .dropdown-items,
-.light-mode .regionInput,
-.light-mode .submitRegion {
-  background-color: #f0f0f0; /* Light background for light mode */
-}
-
-/* Dark Mode Styles */
-.dark-mode,
-.dark-mode .regionInput,
-.dark-mode .dropdown-items button,
-.dark-mode .dropdown-items,
-.dark-mode .submitRegion {
-  background-color: #302f2f; /* Dark background for dark mode */
-}
-
-#initialOverlay{
-  backdrop-filter: blur(8px);
-  z-index: 14;
-  width: 100rem;
-  height: 70rem;
-  position: fixed;
-  margin-top: 1rem;
-  margin-left: 10rem;
-}
-
-#startText{
-  color: #43acd3;
-  font-family: Lexend;
-  font-size: 60px;
-  text-align: center; 
-  margin-top: 7rem;
-  background-color: white;
-  border: 3px solid #637579;
-  border-radius: 30px;
-  padding: 20px;
-}
-
-#spacer{
-  color: #fca24f;
-}
-
-#alteredText{
-  color: #f07d7d;
-}
-
-#smile{
-  color: #9cc5a1;
-}
-
-#helpText{
-  color: #637579;
-  font-family: Lexend;
-  padding-top: 10rem;
-  padding: 1rem;
-}
+/* ==============================================================
+   Font Face
+   ============================================================== */
+   @font-face {
+    font-family: "Lexend";
+    src: url("/font");
+  }
+  
+  /* ==============================================================
+       General Styles
+       ============================================================== */
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* ==============================================================
+       Body
+       ============================================================== */
+  body {
+    position: fixed;
+  }
+  
+  /* ==============================================================
+       Banner
+       ============================================================== */
+  .banner {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  
+  .banneritem {
+    text-align: center;
+    padding: 25px;
+    font-size: 5rem;
+    font-family: Lexend;
+    font-weight: 400;
+    color: #46bbe5;
+    height: 58px;
+    line-height: 1;
+    margin-top: -20px;
+  }
+  
+  /* ==============================================================
+       Main Content
+       ============================================================== */
+  .main-content {
+    padding-top: 200px;
+  }
+  
+  /* ==============================================================
+       Text Styles
+       ============================================================== */
+  .alternate-text {
+    color: #fca24f;
+    display: inline;
+  }
+  
+  .line {
+    background-color: #798c93;
+    width: 1920px;
+    height: 3px;
+  }
+  
+  .material-symbols-outlined {
+    font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 48;
+    transform: scale(0.8);
+  }
+  
+  /* ==============================================================
+       Buttons
+       ============================================================== */
+  .button {
+    color: #798c93;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    float: right;
+    margin: 30px;
+    margin-right: 0px;
+    padding-right: 0px;
+    padding-top: 1px;
+    transform: scale(2.3);
+    cursor: pointer;
+    position: absolute;
+    z-index: 10;
+  }
+  
+  button:hover {
+    color: #637579;
+  }
+  
+  /* ==============================================================
+       Specific Buttons
+       ============================================================== */
+  #settings {
+    padding-left: 8.5rem;
+  }
+  
+  #help {
+    padding-left: 6.4rem;
+  }
+  
+  #menu {
+    padding-right: 31rem;
+    float: left;
+  }
+  
+  .overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: -22px;
+    left: -22px;
+    margin-top: 22px;
+    margin-left: 22px;
+    z-index: 15;
+  }
+  
+  /* ==============================================================
+       Popup Content
+       ============================================================== */
+  .popupContent {
+    width: 24rem;
+    height: 17rem;
+    margin: 0 auto;
+    margin-top: 10%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+  }
+  
+  .popupHelpContent {
+    width: 60rem;
+    height: 20rem;
+    margin: 0 auto;
+    margin-top: 10%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 1rem;
+  }
+  
+  /* ==============================================================
+       Settings and Help Titles
+       ============================================================== */
+  .settingsTitle {
+    font-family: Lexend;
+    font-size: 25pt;
+    font-weight: 400;
+    float: right;
+    margin-right: 7.5rem;
+  }
+  
+  .helpTitle {
+    font-family: Lexend;
+    font-size: 25pt;
+    font-weight: 400;
+    float: right;
+    margin-right: 25rem;
+  }
+  
+  /* ==============================================================
+       Settings Options
+       ============================================================== */
+  .SettingOptions {
+    font-family: Lexend;
+    font-size: 16pt;
+    font-weight: 300;
+    padding: 10px;
+    padding-bottom: 0px;
+    text-align: left;
+  }
+  
+  .radio,
+  .checkbox {
+    cursor: pointer;
+    font-size: 12pt;
+    margin-top: 10px;
+    margin-left: 30px;
+    line-height: 24px;
+    display: flex;
+    vertical-align: top;
+  }
+  
+  #checkboxText {
+    font-size: 12pt;
+    margin-left: 5px;
+    line-height: 24px;
+    display: flex;
+    vertical-align: top;
+  }
+  
+  .Cancel {
+    color: #798c93;
+    background-color: #ffffff00;
+    border: none;
+    margin-top: 0.5rem;
+    margin-left: 0.5rem;
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  
+  /* ==============================================================
+       Game Background
+       ============================================================== */
+  .gameBackground {
+    background-color: #74ceef;
+    border: solid;
+    border-width: 0.3rem;
+    border-radius: 30pt;
+    border-color: #637579;
+    width: 47rem;
+    height: 32rem;
+    margin-top: 1rem;
+    margin-left: 36rem;
+    position: relative;
+  }
+  
+  .game-background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: 30pt;
+  }
+  
+  .gameText {
+    font-family: Lexend;
+    font-size: 26pt;
+    text-align: center;
+    margin-top: -10.5rem;
+  }
+  
+  /* ==============================================================
+       Region Colors
+       ============================================================== */
+  #initialRegion {
+    color: #f07d7d;
+    margin-top: -15rem;
+  }
+  
+  .finalRegion {
+    color: #9cc5a1;
+  }
+  
+  .regionInput {
+    padding: 10px;
+    height: 30px;
+    width: 37.8rem;
+    margin-left: 36rem;
+    margin-top: 20px;
+    border: solid #fca24f;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 20px;
+    font-family: Lexend;
+    border-right-color: #fca24f;
+    border-right-width: 4px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    color: #46bbe5;
+  }
+  
+  .regionInput::placeholder {
+    color: #798c93;
+  }
+  
+  .regionInput:focus {
+    outline-style: none;
+    box-shadow: none;
+    color: #46bbe5;
+  }
+  
+  /* ==============================================================
+       Form Styles
+       ============================================================== */
+  datalist {
+    display: none;
+  }
+  
+  #regionForm {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .submitRegion {
+    padding: 10px;
+    height: 3.5rem;
+    width: 8rem;
+    margin-left: -0.5rem;
+    border: solid #fca24f;
+    border-left-style: none;
+    border-radius: 15px;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background-color: white;
+    color: #46bbe5;
+    font-size: 20px;
+    font-family: Lexend;
+    z-index: 11;
+    cursor: pointer;
+  }
+  
+  .submitRegion:hover {
+    box-shadow: 3px;
+    color: #43acd3;
+    background-color: rgb(250, 250, 250);
+  }
+  
+  /* ==============================================================
+       Vertical Line
+       ============================================================== */
+  .vertical {
+    border-left: 3px solid #46bbe5;
+    position: absolute;
+    margin-left: 75.3rem;
+    margin-top: -2.5rem;
+    height: 25px;
+    border-radius: 4px;
+    z-index: 11;
+  }
+  
+  /* ==============================================================
+       Dropdown Menu
+       ============================================================== */
+  .dropdown-top button {
+    width: 50%;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    cursor: pointer;
+    padding: 1rem;
+  }
+  
+  .dropdown-items button {
+    width: 100%;
+    text-align: left;
+    margin-top: 0rem;
+    padding: 0.9rem;
+    border: none;
+    border-bottom: 1px solid #798c93;
+    border-radius: 5px 0px 0px 0px;
+    background-color: #f9f9f9;
+    cursor: pointer;
+    color: #46bbe5;
+    font-family: Lexend;
+    font-size: 16px;
+  }
+  
+  .dropdown-items button:hover {
+    background-color: rgba(0, 0, 0, 0.03);
+  }
+  
+  .dropdown-items {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 39rem;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    margin-left: 36rem;
+    overflow-y: scroll;
+    max-height: 12.4rem;
+    border-radius: 1rem;
+  }
+  
+  /* ==============================================================
+       Scrollbars
+       ============================================================== */
+  ::-webkit-scrollbar {
+    width: 10px;
+    border-left: 1px solid #798c93;
+    border-right: 1px solid #798c93;
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 1rem;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #798c93;
+    border-radius: 0rem 1rem 1rem 0rem;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #637579;
+  }
+  
+  /* ==============================================================
+       Highlight
+       ============================================================== */
+  .highlight {
+    text-decoration: underline;
+    color: #fca24f;
+  }
+  
+  /* ==============================================================
+       Guessed Regions
+       ============================================================== */
+  #guessedRegionsContainer {
+    display: flex;
+    flex-wrap: wrap;
+    width: 47rem;
+    margin-left: 36rem;
+    margin-top: 10px;
+  }
+  
+  #guessed-region {
+    color: #637579;
+    padding: 0.5rem 2rem;
+    padding-left: 0rem;
+    font-family: Lexend;
+    font-size: 18px;
+  }
+  
+  /* ==============================================================
+       SVG Colors
+       ============================================================== */
+  #svg3450 {
+    margin-top: -10rem;
+    margin-left: 10rem;
+    z-index: 1;
+    position: relative;
+  }
+  
+  :root {
+    --default-color: #9cc5a1;
+    --hover-color: #7a9b7f;
+    --light-up-color: rgba(209, 85, 118, 0.7);
+  }
+  
+  /* ==============================================================
+       SVG Region Colors
+       ============================================================== */
+  #Northland,
+  #Auckland,
+  #Waikato,
+  #BoP,
+  #Gisborne,
+  #Hawkes-Bay,
+  #Taranaki,
+  #Manawatu,
+  #Wellington,
+  #Westland,
+  #Nelson,
+  #Otago,
+  #Southland,
+  #Tasman,
+  #Marlborough,
+  #Canterbury {
+    fill: var(--default-color);
+    cursor: pointer;
+  }
+  
+  #Northland:hover,
+  #Auckland:hover,
+  #Waikato:hover,
+  #BoP:hover,
+  #Gisborne:hover,
+  #Hawkes-Bay:hover,
+  #Taranaki:hover,
+  #Manawatu:hover,
+  #Wellington:hover,
+  #Westland:hover,
+  #Nelson:hover,
+  #Otago:hover,
+  #Southland:hover,
+  #Tasman:hover,
+  #Marlborough:hover,
+  #Canterbury:hover {
+    fill: var(--hover-color);
+  }
+  
+  /* ==============================================================
+       Score
+       ============================================================== */
+  #Score {
+    position: absolute;
+    margin-top: 0.5rem;
+    margin-left: 38.5rem;
+    font-size: 16pt;
+    font-family: Lexend;
+    color: white;
+  }
+  
+  /* ==============================================================
+       Keyframes
+       ============================================================== */
+  @keyframes shake {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-5px);
+    }
+    50% {
+      transform: translateX(5px);
+    }
+    75% {
+      transform: translateX(-5px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+  }
+  
+  .shake {
+    animation: shake 0.5s;
+  }
+  
+  /* ==============================================================
+       Light Mode
+       ============================================================== */
+  .light-mode,
+  .light-mode .dropdown-items,
+  .light-mode .regionInput,
+  .light-mode .submitRegion {
+    background-color: #f0f0f0;
+  }
+  
+  /* ==============================================================
+       Dark Mode
+       ============================================================== */
+  .dark-mode,
+  .dark-mode .regionInput,
+  .dark-mode .dropdown-items button,
+  .dark-mode .dropdown-items,
+  .dark-mode .submitRegion {
+    background-color: #302f2f;
+  }
+  
+  /* ==============================================================
+       Initial Overlay
+       ============================================================== */
+  #initialOverlay {
+    backdrop-filter: blur(8px);
+    z-index: 14;
+    width: 100rem;
+    height: 70rem;
+    position: fixed;
+    margin-top: 1rem;
+    margin-left: 10rem;
+  }
+  
+  /* ==============================================================
+       Start Text
+       ============================================================== */
+  #startText {
+    color: #43acd3;
+    font-family: Lexend;
+    font-size: 60px;
+    text-align: center;
+    margin-top: 7rem;
+    background-color: white;
+    border: 3px solid #637579;
+    border-radius: 30px;
+    padding: 20px;
+  }
+  
+  /* ==============================================================
+       Spacer and Altered Text
+       ============================================================== */
+  #spacer {
+    color: #fca24f;
+  }
+  
+  #alteredText {
+    color: #f07d7d;
+  }
+  
+  #smile {
+    color: #9cc5a1;
+  }
+  
+  #helpText {
+    color: #637579;
+    font-family: Lexend;
+    padding-top: 1rem;
+    padding-left: 1rem;
+  }
+  
+  /* ==============================================================
+       Side Menu
+       ============================================================== */
+  .side-menu {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #637579;
+    overflow-x: hidden;
+    transition: 0.3s;
+    padding-top: 10px;
+    color: white;
+    z-index: 20;
+  }
+  
+  #closeMenu {
+    color: #f9f9f9;
+    background-color: #ffffff00;
+    border: none;
+    margin-left: 5px;
+    transform: scale(1.5);
+    cursor: pointer;
+  }
+  
+  .side-menu.open {
+    width: 250px;
+  }
+  
+  #sideMenuTitle {
+    font-family: Lexend;
+    font-size: 25pt;
+    text-align: center;
+    font-weight: 400;
+  }
+  
+  #sideMenuContent {
+    margin-top: 20rem;
+    font-family: Lexend;
+    font-size: 20pt;
+    text-align: center;
+    font-weight: 400;
+  }  

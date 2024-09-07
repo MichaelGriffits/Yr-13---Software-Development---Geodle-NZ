@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -13,6 +12,13 @@
     <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
    </head>
   <body>
+    <div id="sideMenu" class="side-menu">
+      <button id="closeMenu">
+      <span class="material-symbols-outlined">Cancel</span>
+    </button>
+        <div id="sideMenuTitle"> Game Libary</div>
+        <div id="sideMenuContent"> (Other Games Coming Soon)</div>
+    </div>
     <div class="banner">
       <div class="banneritem left">
         <button id="menu" class="button">
@@ -943,7 +949,7 @@
           <button id="settingsCancelButton" class="Cancel">
             <span class="material-symbols-outlined">Cancel</span>
           </button>
-          <div class="Title">Settings</div>
+          <div class="settingsTitle">Settings</div>
           <div id="ColourScheme" class="SettingOptions">
             Colour Scheme:
             <label class="radio">
@@ -961,6 +967,7 @@
                 name="radio"
                 id="lightModeRadio"
                 onclick="lightMode()"
+                checked
               />
               <span class="material-symbols-outlined">Light_Mode</span> Light
               Mode
@@ -977,7 +984,7 @@
               <span id="checkboxText">Expert: Disable Auto Complete</span>
             </div>
           </div>
-          <div id="Language" class="SettingOptions">Language:</div>
+        </div>
         </div>
       </div>
     </div>
@@ -987,9 +994,18 @@
             <button id="helpCancelButton" class="Cancel">
               <span class="material-symbols-outlined">Cancel</span>
             </button>
-            <span id="helpText"> Welcome to Geodle NZ, if your here it means you need some help or have pushed the wrong button :D 
+            <div class="helpTitle">How To Play</div>
+            <div id="helpText"> Welcome to Geodle NZ, if your here it means you need some help or have pushed the wrong button :D 
             <p>(you might wanna hit the x button in the top left if you're the later)</p>
-          </span>
+            <p>---</p>
+            <p>Name the highlighted region to increase your score, you can keep trying for as long as you want (this is, of course in the end, a game about learning) </p>
+            <p>---</p>
+            <p>There are numorous settings options to increase the dificulty or change the look of the game, to access just click the cog in the top right</p>
+            <p>---</p>
+            <p>An important key to remeber is SPACE, use it to start and restart once you are finished</p>
+            <p>---</p>
+            <p>And most importantly, have fun</p>
+            </div>
           </div>
         </div>
       </div>
