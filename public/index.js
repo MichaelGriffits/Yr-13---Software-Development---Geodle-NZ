@@ -160,13 +160,19 @@ window.onload = function () {
       Westland: document.getElementById("Westland"),
     };
 
+    // Convert region names to lowercase for case-insensitive comparison
+    const regionSVGMapLower = {};
+    for (const [key, value] of Object.entries(regionSVGMap)) {
+      regionSVGMapLower[key.toLowerCase()] = value;
+    }
+
     // Check if the entered region is correct and matches the highlighted region
-    if (region && region === lastHighlightedRegion) {
-      if (regionSVGMap[region]) {
-        regionSVGMap[region].style.fill = "#9cc5a1"; // Highlight the region in green
+    if (region && region.toLowerCase() === (lastHighlightedRegion || "").toLowerCase()) {
+      if (regionSVGMapLower[region.toLowerCase()]) {
+        regionSVGMapLower[region.toLowerCase()].style.fill = "#9cc5a1"; // Highlight the region in green
       }
 
-      correctlyAnsweredRegions.add(region); // Add to correctly guessed regions
+      correctlyAnsweredRegions.add(region.toLowerCase()); // Add to correctly guessed regions (lowercase)
       displayGuessedRegions(); // Update guessed regions display
 
       entry.value = ""; // Clear input field
@@ -187,9 +193,9 @@ window.onload = function () {
     guessedRegionsContainer.innerHTML = ""; // Clear existing list
 
     // Add each guessed region to the display
-    correctlyAnsweredRegions.forEach(region => {
+    Array.from(correctlyAnsweredRegions).forEach(region => {
       const regionElement = document.createElement("div");
-      regionElement.textContent = region;
+      regionElement.textContent = region.charAt(0).toUpperCase() + region.slice(1); // Capitalize first letter
       regionElement.classList.add("guessed-region");
       guessedRegionsContainer.appendChild(regionElement);
     });
@@ -227,8 +233,8 @@ window.onload = function () {
   function highlightRandomRegion() {
     const remainingRegions = regions.filter(
       region =>
-        region !== lastHighlightedRegion && // Exclude the last highlighted region
-        !correctlyAnsweredRegions.has(region) // Exclude already guessed regions
+        region.toLowerCase() !== lastHighlightedRegion?.toLowerCase() && // Exclude the last highlighted region
+        !correctlyAnsweredRegions.has(region.toLowerCase()) // Exclude already guessed regions
     );
 
     if (remainingRegions.length > 0) {
