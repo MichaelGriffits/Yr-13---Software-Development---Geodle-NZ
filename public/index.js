@@ -214,6 +214,8 @@ window.onload = function () {
     hardMode = this.checked;
     if (hardMode) {
       guessedRegionsContainer.style.display = "none"; // Hide guessed regions in hard mode
+    }else{
+      guessedRegionsContainer.style.display = "block"; // Shows guessed regions when not in hard mode
     }
   });
 
